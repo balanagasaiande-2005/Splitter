@@ -2,7 +2,7 @@
 module stream_splitter #(
     parameter DATA_WIDTH = 64,
     parameter ACTIVE_SAMPLES = 3276,
-    parameter IDLE_SAMPLES   = 1172,
+    parameter IDLE_SAMPLES = 1172,
     parameter ADDR_WIDTH = 12   
 )(
     input wire clk,
@@ -51,7 +51,6 @@ module stream_splitter #(
                         sample_count <= sample_count + 1;
                     end
                 end
-                // ---------------- IDLE ----------------
                 S_IDLE: begin
                     // output zero, but still write incoming into BRAM
                     data_port1 <= 0;
